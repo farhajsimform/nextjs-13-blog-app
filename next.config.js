@@ -6,6 +6,9 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  images: {
+    domains: ["https://api.lorem.space"],
+  },
 };
 
 module.exports = nextConfig;

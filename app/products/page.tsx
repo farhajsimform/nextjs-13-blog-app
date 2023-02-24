@@ -1,3 +1,4 @@
+import { AllProducts } from "../../components/allproducts";
 import { Product } from "../../components/product";
 
 export const dynamic = "force-dynamic";
@@ -15,11 +16,5 @@ async function fetchProducts() {
 export default async function Page() {
   const { allProducts: { products = [] } = {} } = await fetchProducts();
 
-  return (
-    <div className="flex flex-wrap w-full mt-8 justify-center">
-      {(products || []).map((product: any) => (
-        <Product key={product.id} product={product} />
-      ))}
-    </div>
-  );
+  return <AllProducts products={products} />;
 }
